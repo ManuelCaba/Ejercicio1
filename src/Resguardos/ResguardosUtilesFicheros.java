@@ -3,32 +3,32 @@ package Resguardos;
 public class ResguardosUtilesFicheros {
 	/*
 	 * Método que ordena un fichero según ordenación híbrida
-	 * Signatura: public void ordenarFicheroHibrida(String rutaFichero)
+	 * Signatura: public void ordenarFicheroHibrida(String fichero)
 	 * Entradas: 
-	 * 		- String rutaFichero
+	 * 		- String fichero
 	 * Precondiciones: No hay
 	 * Salidas: No hay
-	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se ordenará, en 
-	 * 					caso contrario se lanzará una excepción FileNotFoundException
+	 * Postcondiciones: Si el fichero existe se ordenará, en caso contrario 
+	 * 					se lanzará una excepción FileNotFoundException
 	 */
-	public void ordenarFicheroHibrida(String rutaFichero)
+	public void ordenarFicheroHibrida(String fichero)
 	{
 		System.out.println("El metodo ordenacionFicheroHibrida se encuentra en resguardo");
 	}
 	
 	/*
 	 * Método que vuelca un fichero en un array
-	 * Signatura: public String[] volcarFicheroArray(String rutaFichero)
+	 * Signatura: public String[] volcarFicheroArray(String fichero)
 	 * Entradas: 
-	 * 		- String rutaFichero
+	 * 		- String fichero
 	 * Precondiciones: No hay
 	 * Salidas:
 	 * 		- String[] fichero
-	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se devolverá 
-	 * 					asociado al nombre un array de string con los registros, en 
-	 * 					caso contrario se lanzará una excepción FileNotFoundException
+	 * Postcondiciones: Si el fichero existe se devolverá asociado al nombre un array 
+	 * 					de string con los registros, en caso contrario se lanzará una 
+	 * 					excepción FileNotFoundException
 	 */
-	public String[] volcarFicheroArray(String rutaFichero)
+	public String[] volcarFicheroArray(String fichero)
 	{
 		System.out.println("El metodo volcarFicheroArray se encuentra en resguardo");
 		
@@ -50,17 +50,17 @@ public class ResguardosUtilesFicheros {
 	
 	/*
 	 * Método que vuelca un array de string en un fichero
-	 * Signatura: public void volcarArrayFichero(String rutaFichero)
+	 * Signatura: public void volcarArrayFichero(String fichero)
 	 * Entradas:
 	 * 		- String[] array;
-	 * 		- String rutaFichero;
+	 * 		- String fichero;
 	 * Precondiciones: No hay
 	 * Salidas: No hay
-	 * Postcondciones: Si el fichero que referencia rutaFichero existe se volcará el 
-	 * 				   array en el fichero, en caso contrario se lanzará una 
-	 * 				   excepción FileNotFoundException
+	 * Postcondciones: Si el fichero existe se volcará el array en el fichero, 
+	 * 				   en caso contrario se lanzará una excepción 
+	 * 				   FileNotFoundException
 	 */
-	public void volcarArrayFichero(String rutaFichero, String[] array)
+	public void volcarArrayFichero(String fichero, String[] array)
 	{
 		System.out.println("El metodo volcarArrayFichero se encuentra en resguardo");
 	}

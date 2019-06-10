@@ -10,42 +10,42 @@ import java.util.ArrayList;
 public class UtilesFicheros {
 	/*
 	 * Método que ordena un fichero según ordenación híbrida
-	 * Signatura: public void ordenarFicheroHibrida(String rutaFichero)
+	 * Signatura: public void ordenarFicheroHibrida(String fichero)
 	 * Entradas: 
-	 * 		- String rutaFichero
+	 * 		- String fichero
 	 * Precondiciones: No hay
 	 * Salidas: No hay
-	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se ordenará, en 
-	 * 					caso contrario se lanzará una excepción FileNotFoundException
+	 * Postcondiciones: Si el fichero existe se ordenará, en caso contrario 
+	 * 					se lanzará una excepción FileNotFoundException
 	 */
-	public void ordenarFicheroHibrida(String rutaFichero)
+	public void ordenarFicheroHibrida(String fichero)
 	{
-		String[] arrayFichero = volcarFicheroArray(rutaFichero);
+		String[] arrayFichero = volcarFicheroArray(fichero);
 		ordenacionBurbuja(arrayFichero);
-		volcarArrayFichero(rutaFichero, arrayFichero);
+		volcarArrayFichero(fichero, arrayFichero);
 	}
 	
 	/*
 	 * Método que vuelca un fichero en un array
-	 * Signatura: public String[] volcarFicheroArray(String rutaFichero)
+	 * Signatura: public String[] volcarFicheroArray(String fichero)
 	 * Entradas: 
-	 * 		- String rutaFichero
+	 * 		- String fichero
 	 * Precondiciones: No hay
 	 * Salidas:
 	 * 		- String[] fichero
-	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se devolverá 
-	 * 					asociado al nombre un array de string con los registros, en 
-	 * 					caso contrario se lanzará una excepción FileNotFoundException
+	 * Postcondiciones: Si el fichero existe se devolverá asociado al nombre un array 
+	 * 					de string con los registros, en caso contrario se lanzará una 
+	 * 					excepción FileNotFoundException
 	 */
-	public String[] volcarFicheroArray(String rutaFichero)
+	public String[] volcarFicheroArray(String fichero)
 	{
 		BufferedReader br = null;
 		String linea = null;
-		String[] fichero = null;
+		String[] arrayFichero = null;
 		ArrayList<String> ficheroList = new ArrayList<String>();
 		
 		try {
-			br = new BufferedReader(new FileReader(rutaFichero));
+			br = new BufferedReader(new FileReader(fichero));
 			
 			linea = br.readLine();
 			
@@ -59,14 +59,14 @@ public class UtilesFicheros {
 			e.printStackTrace();
 		}
 		
-		fichero = new String[ficheroList.size()];
+		arrayFichero = new String[ficheroList.size()];
 		
-		for(int i = 0; i < fichero.length; i++)
+		for(int i = 0; i < arrayFichero.length; i++)
 		{
-			fichero[i] = ficheroList.get(i);
+			arrayFichero[i] = ficheroList.get(i);
 		}
 		
-		return fichero;
+		return arrayFichero;
 	}
 	
 	/*
@@ -102,22 +102,22 @@ public class UtilesFicheros {
 	
 	/*
 	 * Método que vuelca un array de string en un fichero
-	 * Signatura: public void volcarArrayFichero(String rutaFichero)
+	 * Signatura: public void volcarArrayFichero(String fichero)
 	 * Entradas:
 	 * 		- String[] array;
-	 * 		- String rutaFichero;
+	 * 		- String fichero;
 	 * Precondiciones: No hay
 	 * Salidas: No hay
-	 * Postcondciones: Si el fichero que referencia rutaFichero existe se volcará el 
-	 * 				   array en el fichero, en caso contrario se lanzará una 
-	 * 				   excepción FileNotFoundException
+	 * Postcondciones: Si el fichero existe se volcará el array en el fichero, 
+	 * 				   en caso contrario se lanzará una excepción 
+	 * 				   FileNotFoundException
 	 */
-	public void volcarArrayFichero(String rutaFichero, String[] array)
+	public void volcarArrayFichero(String fichero, String[] array)
 	{
 		BufferedWriter bw = null;
 		
 		try {
-			bw = new BufferedWriter(new FileWriter(rutaFichero));
+			bw = new BufferedWriter(new FileWriter(fichero));
 			
 			for(int i = 0; i < array.length; i++)
 			{
@@ -137,22 +137,21 @@ public class UtilesFicheros {
 	
 	/*
 	 * Método que lista un fichero
-	 * Signatura: public void listarFichero(String rutaFichero)
-	 * Entradas: - String rutaFichero
+	 * Signatura: public void listarFichero(String fichero)
+	 * Entradas: - String fichero
 	 * Precondiciones: No hay
 	 * Salidas: No hay, solo imprime en pantalla
-	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se imprimirá 
-	 * 					por pantalla un listado de todos los registros del fichero, 
-	 * 					en caso contrario se lanzará una excepción 
-	 * 					FileNotFoundException
+	 * Postcondiciones: Si el fichero existe se imprimirá por pantalla un listado
+	 *					de todos los registros del fichero, en caso contrario se 
+	 *					lanzará una excepción FileNotFoundException
 	 */
-	public void listarFichero(String rutaFichero)
+	public void listarFichero(String fichero)
 	{
 		BufferedReader br = null;
 		String linea = null;
 		
 		try {
-			br = new BufferedReader(new FileReader(rutaFichero));
+			br = new BufferedReader(new FileReader(fichero));
 			
 			linea = br.readLine();
 			

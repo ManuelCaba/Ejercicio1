@@ -11,11 +11,12 @@ public class ResguardosGestoraAlmacen {
 	 * Signatura: public void listarProductosFabricante(String rutaFichero, String nombreFabricante)
 	 * Entradas:
 	 * 		- String rutaFichero
-	 * Precondiciones:
-	 * 		- rutaFichero debe apuntar correctamente al fichero deseado y no puede estar vacío
+	 * 		- String nombreFabricante
+	 * Precondiciones: No hay
 	 * Salidas: No hay, solo imprime por pantalla
-	 * Postcondiciones: Imprimirá por pantalla todos los producto del fabricante,
-	 *  si no hay ningún fabricante con algún producto no se imprimirá nada.
+	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se imprimirá por pantalla 
+	 * 					todos los producto del fabricante cuyo nombre se ha pasado por parámetros,
+	 * 					en caso contrario se lanzará una excepción FileNotFoundException
 	 */
 	public void listarProductosFabricante(String rutaFichero, String nombreFabricante)
 	{
@@ -23,17 +24,18 @@ public class ResguardosGestoraAlmacen {
 	}
 	
 	/*
-	 * Método que lista por pantalla los productos con fecha de caducidad
-	 * posterior a la fecha elegida por el usuario
+	 * Método que lista por pantalla los productos con fecha de caducidad posterior a 
+	 * la fecha elegida por el usuario
 	 * Signatura: public void listarProductosCaducidad(String rutaFichero, String fecha)
 	 * Entradas:
 	 * 		- String rutaFichero
 	 * 		- String fecha
 	 * Precondiciones:
-	 * 		- rutaFichero debe apuntar correctamente al fichero deseado y no puede estar vacío
+	 * 		- fecha debe ser una fecha válida
 	 * Salidas: No hay, solo imprime por pantalla
-	 * Postcondiciones: Se mostrará un listado de los productos que no estén caducados en
-	 * la fecha elegia por el usuario
+	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se mostrará un listado de
+	 * 					los productos que no estén caducados en la fecha elegida por el usuario,
+	 * 					en caso contrario se lanzará una excepción FileNotFoundException
 	 */
 	public void listarProductosCaducidad(String rutaFichero, String fecha)
 	{
@@ -45,10 +47,11 @@ public class ResguardosGestoraAlmacen {
 	 * Signatura: public void imprimirPrecioTotal(String rutaFichero)
 	 * Entradas:
 	 * 		- String rutaFichero
-	 * Precondiciones:
-	 * 		- rutaFichero debe apuntar correctamente al fichero deseado y no puede estar vacío
+	 * Precondiciones: No hay
 	 * Salidas: No hay
-	 * Postcondiciones: Se mostrará por pantalla el total (en euros) de todos los productos del almacén
+	 * Postcondiciones: Si el fichero que referencia rutaFichero existe se mostrará por pantalla 
+	 * 					el total (en euros) de todos los productos del almacén, en caso 
+	 * 					contrario se lanzará una excepción FileNotFoundException
 	 */
 	public void imprimirPrecioTotal(String rutaFichero)
 	{

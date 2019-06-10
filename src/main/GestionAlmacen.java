@@ -94,11 +94,12 @@ public class GestionAlmacen {
 		
 		Scanner teclado = new Scanner(System.in);
 		
-		String rutaFichero = ".\\src\\archivos\\Almacen.txt";
+		String fichero = ".\\src\\archivos\\Almacen.txt";
 		
 		int opcion;
 		String nombreFabricante;
 		String fecha;
+		String codigoBarras;
 		ProductoImpl producto;
 		
 		opcion = validaciones.mostrarMenuPrincipalYLeerYValidarOpcion();
@@ -116,22 +117,21 @@ public class GestionAlmacen {
 							System.out.println("Introduce el nombre del fabricante: ");
 							nombreFabricante = teclado.nextLine();
 						
-							rga.listarProductosFabricante(rutaFichero, nombreFabricante);
+							rga.listarProductosFabricante(fichero, nombreFabricante);
 						break;
 						case 2:
-							System.out.println("Escribe la fecha que deseas saber que productos siguen sin caducar: ");
+							System.out.println("Escribe la fecha en la que deseas saber que productos no estan caducados: ");
 							fecha = validaciones.leerYValidarFecha();
 							
-							rga.listarProductosCaducidad(rutaFichero, fecha);
+							rga.listarProductosCaducidad(fichero, fecha);
 						break;
 						case 3:
-							rga.imprimirPrecioTotal(rutaFichero);
+							rga.imprimirPrecioTotal(fichero);
 					}
 					
 					opcion = validaciones.mostrarMenuImpresionYLeerYValidarOpcion();
-				}
-				
-
+				}		
+			break;
 			case 2:
 				opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
 				
@@ -140,13 +140,13 @@ public class GestionAlmacen {
 					switch(opcion)
 					{
 						case 1:
-							rga.mostrarProductosPresentacion(rutaFichero, EnumPresentacion.C);
+							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.C);
 						break;
 						case 2:
-							rga.mostrarProductosPresentacion(rutaFichero, EnumPresentacion.G);
+							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.G);
 						break;
 						case 3:
-							rga.mostrarProductosPresentacion(rutaFichero, EnumPresentacion.S);
+							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.S);
 					}
 					
 					opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
@@ -162,10 +162,10 @@ public class GestionAlmacen {
 						case 1:
 							producto = validaciones.leerYValidarProductoImpl();
 							
-							rga.anhadirProducto(producto, rutaFichero);
+							rga.anhadirProducto(producto, fichero);
 						break;
 						case 2:
-							rga.mostrarProductosPresentacion(rutaFichero, EnumPresentacion.G);
+							codigoBarras = validaciones.leerYValidarCodigoBarras();
 						
 					}
 					

@@ -261,7 +261,7 @@ public class Validaciones {
 	  * Precondiciones: No hay
 	  * Salidas:
 	  * 	- int opcion
-	  * Postcondiciones: Se muestra el menu por pantalla y devuelve la opcion elgida por el usuario validada
+	  * Postcondiciones: Se muestra el menu por pantalla y devuelve la opcion elegida por el usuario validada
 	  */
 	 public int mostrarMenuPrincipalYLeerYValidarOpcion()
 	 {
@@ -283,7 +283,11 @@ public class Validaciones {
 	 }
 	 
 	 /*
-	  * Método que muestra un menú de impresión del programa y lee y valida sus opciones
+	  * Método que muestra un menú de impresión del programa y lee y valida su opcion:
+	  * - 1 --> Imprimir listado de productos de un fabricante
+	  * - 2 --> Imprimir productos segun fecha de caducidad
+	  * - 3 --> Imprimir total en euros de productos (3)
+	  * - 0 --> Salir
 	  * Signatura: public int mostrarMenuImpresionYLeerYValidarOpcion()
 	  * Entradas: No hay
 	  * Precondiciones: No hay
@@ -311,7 +315,11 @@ public class Validaciones {
 	 }
 	 
 	 /*
-	  * Método que muestra un menú de cálculos del programa y lee y valida sus opciones
+	  * Método que muestra un menú de cálculos del programa y lee y valida sus opciones:
+	  * 1 --> Total de productos en comprimidos
+	  * 2 --> Total de productos en gotas
+	  * 3 --> Total de productos en suspension
+	  * 0 --> Salir
 	  * Signatura: public int mostrarMenuCalculosYLeerYValidarOpcion()
 	  * Entradas: No hay
 	  * Precondiciones: No hay
@@ -339,7 +347,10 @@ public class Validaciones {
 	 }
 	 
 	 /*
-	  * Método que muestra un menú de gestion del programa y lee y valida sus opciones
+	  * Método que muestra un menú de gestion del programa y lee y valida sus opciones:
+	  * 1 --> Anhadir producto
+	  * 2 --> Eliminar producto
+	  * 0 --> Salir
 	  * Signatura: public int mostrarMenuGestionYLeerYValidarOpcion()
 	  * Entradas: No hay
 	  * Precondiciones: No hay
@@ -354,8 +365,8 @@ public class Validaciones {
 		 
 		 do
 		 {
-			 System.out.println("Añadir producto (1)");
-			 System.out.println("Eliminar producto(2)");
+			 System.out.println("Anhadir producto (1)");
+			 System.out.println("Eliminar producto (2)");
 			 System.out.println("Salir (0)");
 			 System.out.println("Elige la opcion: ");
 			 opcion = teclado.nextInt();
