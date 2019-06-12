@@ -13,7 +13,7 @@ public class crearFichero {
 	public static void main(String[] args) {
 		
 		String rutaFichero = ".\\src\\archivos\\Almacen.txt";
-		UtilesFicheros gf = new UtilesFicheros();
+		UtilesFicheros uf = new UtilesFicheros();
 		
 		ProductoImpl p1 = new ProductoImpl("123456", "LaboratorioManuel", new GregorianCalendar(), 20.0, EnumPresentacion.C, "etiniliestradiol");
 		ProductoImpl p2 = new ProductoImpl("765432", "LaboratorioAsun", new GregorianCalendar(), 30.0, EnumPresentacion.G, "alcohol");
@@ -43,9 +43,9 @@ public class crearFichero {
 		
 		System.out.println();
 		
-		gf.listarFichero(rutaFichero);
+		uf.listarFichero(rutaFichero);
 		
-		gf.ordenarFicheroHibrida(rutaFichero);
+		uf.ordenarFicheroHibrida(rutaFichero);
 		
 		System.out.println();
 		System.out.println();
@@ -54,7 +54,7 @@ public class crearFichero {
 		
 		System.out.println();
 		
-		gf.listarFichero(rutaFichero);
+		uf.listarFichero(rutaFichero);
 	}
 
 }

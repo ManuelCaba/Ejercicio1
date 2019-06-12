@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import interfaces.Mercancia;
+import Interfaces.Mercancia;
 
 /*
  * Clase MercanciaImpl
