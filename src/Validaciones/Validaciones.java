@@ -41,7 +41,7 @@ public class Validaciones {
 		System.out.println("Introduce la fecha de caducidad: ");
 		fecha = leerYValidarFecha();
 		
-		fechaCaducidad = new GregorianCalendar(Integer.parseInt(fecha.split("/")[0]), Integer.parseInt(fecha.split("/")[1]) + 1, Integer.parseInt(fecha.split("/")[2]));
+		fechaCaducidad = new GregorianCalendar(Integer.parseInt(fecha.split("/")[2]), Integer.parseInt(fecha.split("/")[1]) + 1, Integer.parseInt(fecha.split("/")[0]));
 		
 		precio = leerYValidarPrecio();
 		
@@ -97,7 +97,7 @@ public class Validaciones {
 		 
 		 do
 		 {
-			 System.out.println("Introduce el precio de barras:");
+			 System.out.println("Introduce el precio: ");
 			 precio = teclado.nextDouble();
 		 }
 		 while (precio < 0);
@@ -123,7 +123,7 @@ public class Validaciones {
 		 
 		 do
 		 {
-			 System.out.println("Escribe la presentacion (comprimidos, gotas o suspension: ");
+			 System.out.println("Escribe la presentacion (comprimidos, gotas o suspension): ");
 			 nombrePresentacion = teclado.nextLine();
 		 }
 		 while (!nombrePresentacion.equals("comprimidos") && 

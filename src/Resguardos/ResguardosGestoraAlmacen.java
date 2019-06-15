@@ -95,18 +95,19 @@ public class ResguardosGestoraAlmacen {
 	
 	/*
 	 * Método que elimina un registro de un Producto del fichero Productos según su código de barras
-	 * Signatura: public void eliminarProducto(String codigoBarras, String fichero)
+	 * Signatura: public void eliminarProducto(String codigoBarras, String fichero, String ficheroAux)
 	 * Entradas: 
 	 * 		- String codigoBarras
 	 * 		- String fichero
+	 * 		- String fihceroAux
 	 * Precondiciones:
 	 * 		- codigoBarras debe ser un código de barras válido
-	 * Salidas: No hay
+	 * Salidas: ficheroAux modificado
 	 * Postcondiciones: Si el fichero existe se eliminará el registro de Producto cuyo código de barras
 	 * 					coincida con el que se ha pasado por parámetros, en caso contrario se lanzará 
 	 * 					una excepción FileNotFoundException
 	 */
-	public void eliminarProducto(String codigoBarras, String fichero)
+	public void eliminarProducto(String codigoBarras, String fichero, String ficheroAux)
 	{
 		System.out.println("El método eliminarProducto se encuentra en resguardo");
 	}

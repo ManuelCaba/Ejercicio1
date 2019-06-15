@@ -99,6 +99,7 @@ public class GestionAlmacen {
 		Scanner teclado = new Scanner(System.in);
 		
 		String fichero = ".\\src\\archivos\\Almacen.txt";
+		String ficheroAux = ".\\src\\archivos\\AlmacenAux.txt";
 		
 		int opcion;
 		String nombreFabricante;
@@ -181,11 +182,16 @@ public class GestionAlmacen {
 								
 								//ruf.ordenarFicheroHibrida(fichero);
 								uf.ordenarFicheroHibrida(fichero);
+								
+								System.out.println("Producto anhadido con exito");
 							break;
 							case 2:
 								codigoBarras = validaciones.leerYValidarCodigoBarras();
 								
-								rga.eliminarProducto(codigoBarras, fichero);
+								//rga.eliminarProducto(codigoBarras, fichero, ficheroAux);
+								ga.eliminarProducto(codigoBarras, fichero, ficheroAux);
+								
+								System.out.println("Producto eliminado con exito");
 						}
 						
 						opcion = validaciones.mostrarMenuGestionYLeerYValidarOpcion();

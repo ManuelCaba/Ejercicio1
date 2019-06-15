@@ -2,6 +2,7 @@ package Gestoras;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -277,29 +278,49 @@ public class GestoraAlmacen {
 	
 	/*
 	 * Método que elimina un registro de un Producto del fichero Productos según su código de barras
-	 * Signatura: public void eliminarProducto(String codigoBarras, String fichero)
+	 * Signatura: public void eliminarProducto(String codigoBarras, String fichero, String ficheroAux)
 	 * Entradas: 
 	 * 		- String codigoBarras
 	 * 		- String fichero
+	 * 		- String fihceroAux
 	 * Precondiciones:
 	 * 		- codigoBarras debe ser un código de barras válido
-	 * Salidas: No hay
+	 * Salidas: ficheroAux modificado
 	 * Postcondiciones: Si el fichero existe se eliminará el registro de Producto cuyo código de barras
 	 * 					coincida con el que se ha pasado por parámetros, en caso contrario se lanzará 
 	 * 					una excepción FileNotFoundException
 	 */
-	public void eliminarProducto(String codigoBarras, String fichero)
+	public void eliminarProducto(String codigoBarras, String fichero, String ficheroAux)
 	{
 		BufferedReader br = null;
 		BufferedWriter bw = null;
 		String linea = null;
 		String camposProducto[];
-		String codigoBararsLeido;
+		String codigoBarrasLeido;
+		File maestro = new File(fichero);
+		File aux = new File(ficheroAux);
 		
 		try {
-			br = new BufferedReader(new FileReader(fichero));
-			bw = new BufferedWriter(new FileWriter())
-		} catch (FileNotFoundException e) {
+			br = new BufferedReader(new FileReader(maestro));
+			bw = new BufferedWriter(new FileWriter(aux));
+			
+			linea = br.readLine();
+			
+			while(linea != null)
+			{
+				camposProducto = linea.split(",");
+				codigoBarrasLeido = camposProducto[0];
+				
+				if(!codigoBarrasLeido.equals(codigoBarras))
+				{
+					bw.write(linea);
+					bw.newLine();
+				}
+				
+				linea = br.readLine();
+			}
+			
+		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -310,6 +331,10 @@ public class GestoraAlmacen {
 			}
 			
 		}
+		
+		maestro.delete();
+		
+		aux.renameTo(maestro);
 		
 	}
 			

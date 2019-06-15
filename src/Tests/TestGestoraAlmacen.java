@@ -2,6 +2,7 @@ package Tests;
 
 import Enums.EnumPresentacion;
 import Gestoras.GestoraAlmacen;
+import Validaciones.Validaciones;
 import clases.ProductoImpl;
 
 public class TestGestoraAlmacen {
@@ -9,6 +10,7 @@ public class TestGestoraAlmacen {
 	public static void main(String[] args) {
 		GestoraAlmacen ga = new GestoraAlmacen();
 		String fichero = ".\\src\\archivos\\Almacen.txt";
+		String ficheroAux = ".\\src\\archivos\\AlmacenAux.txt";
 		
 		ProductoImpl producto = new ProductoImpl();
 		
@@ -25,7 +27,13 @@ public class TestGestoraAlmacen {
 		//ga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.S);
 		//ga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.G);
 		
-		ga.anhadirProducto(producto, fichero);
+		//ga.anhadirProducto(producto, fichero);
+		
+		ga.eliminarProducto("123456", fichero, ficheroAux);
+		
+		Validaciones v = new Validaciones();
+		
+		v.leerYValidarProductoImpl();
 
 	}
 
