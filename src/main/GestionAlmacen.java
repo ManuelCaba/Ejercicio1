@@ -5,6 +5,8 @@ import java.util.Scanner;
 import Enums.EnumPresentacion;
 import Gestoras.GestoraAlmacen;
 import Resguardos.ResguardosGestoraAlmacen;
+import Resguardos.ResguardosUtilesFicheros;
+import Utiles.UtilesFicheros;
 import Validaciones.Validaciones;
 import clases.ProductoImpl;
 
@@ -90,7 +92,9 @@ public class GestionAlmacen {
 	public static void main(String[] args) {
 		Validaciones validaciones = new Validaciones();
 		ResguardosGestoraAlmacen rga = new ResguardosGestoraAlmacen();
+		ResguardosUtilesFicheros ruf = new ResguardosUtilesFicheros();
 		GestoraAlmacen ga = new GestoraAlmacen();
+		UtilesFicheros uf = new UtilesFicheros();
 		
 		Scanner teclado = new Scanner(System.in);
 		
@@ -104,74 +108,94 @@ public class GestionAlmacen {
 		
 		opcion = validaciones.mostrarMenuPrincipalYLeerYValidarOpcion();
 		
-		switch(opcion)
+		while(opcion > 0 && opcion <= 3)
 		{
-			case 1:
-				opcion = validaciones.mostrarMenuImpresionYLeerYValidarOpcion();
-				
-				while(opcion > 0 && opcion <= 3)
-				{
-					switch(opcion)
-					{
-						case 1:
-							System.out.println("Introduce el nombre del fabricante: ");
-							nombreFabricante = teclado.nextLine();
-						
-							rga.listarProductosFabricante(fichero, nombreFabricante);
-						break;
-						case 2:
-							System.out.println("Escribe la fecha en la que deseas saber que productos no estan caducados: ");
-							fecha = validaciones.leerYValidarFecha();
-							
-							rga.listarProductosCaducidad(fichero, fecha);
-						break;
-						case 3:
-							rga.imprimirPrecioTotal(fichero);
-					}
-					
+			switch(opcion)
+			{
+				case 1:
 					opcion = validaciones.mostrarMenuImpresionYLeerYValidarOpcion();
-				}		
-			break;
-			case 2:
-				opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
-				
-				while(opcion > 0 && opcion <= 3)
-				{
-					switch(opcion)
-					{
-						case 1:
-							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.C);
-						break;
-						case 2:
-							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.G);
-						break;
-						case 3:
-							rga.mostrarProductosPresentacion(fichero, EnumPresentacion.S);
-					}
 					
-					opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
-				}
-			break;
-			case 3:
-				opcion = validaciones.mostrarMenuGestionYLeerYValidarOpcion();
-				
-				while(opcion > 0 && opcion <= 2)
-				{
-					switch(opcion)
+					while(opcion > 0 && opcion <= 3)
 					{
-						case 1:
-							producto = validaciones.leerYValidarProductoImpl();
+						switch(opcion)
+						{
+							case 1:
+								System.out.println("Introduce el nombre del fabricante: ");
+								nombreFabricante = teclado.nextLine();
 							
-							rga.anhadirProducto(producto, fichero);
-						break;
-						case 2:
-							codigoBarras = validaciones.leerYValidarCodigoBarras();
+								//rga.listarProductosFabricante(fichero, nombreFabricante);
+								ga.listarProductosFabricante(fichero, nombreFabricante);
+							break;
+							case 2:
+								System.out.println("Escribe la fecha en la que deseas saber que productos no estan caducados: ");
+								fecha = validaciones.leerYValidarFecha();
+								
+								//rga.listarProductosCaducidad(fichero, fecha);
+								ga.listarProductosCaducidad(fichero, fecha);
+							break;
+							case 3:
+								rga.imprimirPrecioTotal(fichero);
+						}
 						
-					}
+						opcion = validaciones.mostrarMenuImpresionYLeerYValidarOpcion();
+					}		
+				break;
+				case 2:
+					opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
 					
+					while(opcion > 0 && opcion <= 3)
+					{
+						switch(opcion)
+						{
+							case 1:
+								//rga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.C);
+								ga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.C);
+
+							break;
+							case 2:
+								//rga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.G);
+								ga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.G);
+
+							break;
+							case 3:
+								//rga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.S);
+								ga.mostrarTotalProductosPresentacion(fichero, EnumPresentacion.S);
+
+						}
+						
+						opcion = validaciones.mostrarMenuCalculosYLeerYValidarOpcion();
+					}
+				break;
+				case 3:
 					opcion = validaciones.mostrarMenuGestionYLeerYValidarOpcion();
-				}	
+					
+					while(opcion > 0 && opcion <= 2)
+					{
+						switch(opcion)
+						{
+							case 1:
+								producto = validaciones.leerYValidarProductoImpl();
+								
+								//rga.anhadirProducto(producto, fichero);
+								ga.anhadirProducto(producto, fichero);
+								
+								//ruf.ordenarFicheroHibrida(fichero);
+								uf.ordenarFicheroHibrida(fichero);
+							break;
+							case 2:
+								codigoBarras = validaciones.leerYValidarCodigoBarras();
+								
+								rga.eliminarProducto(codigoBarras, fichero);
+						}
+						
+						opcion = validaciones.mostrarMenuGestionYLeerYValidarOpcion();
+					}	
+			}
+			
+			opcion = validaciones.mostrarMenuPrincipalYLeerYValidarOpcion();
 		}
+		
+		
 	}
 
 }

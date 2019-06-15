@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.GregorianCalendar;
 
 import Enums.EnumPresentacion;
+import Resguardos.ResguardosUtilesFicheros;
 import Utiles.UtilesFicheros;
 import clases.ProductoImpl;
 
@@ -12,7 +13,8 @@ public class crearFichero {
 
 	public static void main(String[] args) {
 		
-		String rutaFichero = ".\\src\\archivos\\Almacen.txt";
+		String fichero = ".\\src\\archivos\\Almacen.txt";
+		ResguardosUtilesFicheros rug = new ResguardosUtilesFicheros();
 		UtilesFicheros uf = new UtilesFicheros();
 		
 		ProductoImpl p1 = new ProductoImpl("123456", "LaboratorioManuel", new GregorianCalendar(), 20.0, EnumPresentacion.C, "etiniliestradiol");
@@ -23,7 +25,7 @@ public class crearFichero {
 		FileWriter fw = null;
 		
 		try {
-			fw = new FileWriter(rutaFichero);
+			fw = new FileWriter(fichero);
 			
 			fw.write(p1.toString()+"\n");
 			fw.write(p2.toString()+"\n");
@@ -43,9 +45,10 @@ public class crearFichero {
 		
 		System.out.println();
 		
-		uf.listarFichero(rutaFichero);
+		uf.listarFichero(fichero);
 		
-		uf.ordenarFicheroHibrida(rutaFichero);
+		//rug.ordenarFicheroHibrida(fichero);
+		uf.ordenarFicheroHibrida(fichero);
 		
 		System.out.println();
 		System.out.println();
@@ -54,7 +57,7 @@ public class crearFichero {
 		
 		System.out.println();
 		
-		uf.listarFichero(rutaFichero);
+		uf.listarFichero(fichero);
 	}
 
 }

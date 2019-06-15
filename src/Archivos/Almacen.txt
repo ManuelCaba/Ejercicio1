@@ -1,4 +1,5 @@
-123456,LaboratorioManuel,5/6/2019,20.0,C,etiniliestradiol
-123456,ManuelRepetido,5/6/2019,1.99,C,tolueno
-475438,AsunApruebame,5/6/2019,12.77,S,acido sulfurico
-765432,LaboratorioAsun,5/6/2019,30.0,G,alcohol
+123456,LaboratorioManuel,15/6/2019,20.0,C,etiniliestradiol
+123456,ManuelRepetido,15/6/2019,1.99,C,tolueno
+475438,AsunApruebame,15/6/2019,12.77,S,acido sulfurico
+765432,LaboratorioAsun,15/6/2019,30.0,G,alcohol
+000000,Defecto,15/6/2019,0.0,D,Defecto
