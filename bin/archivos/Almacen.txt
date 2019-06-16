@@ -1,4 +1,3 @@
-123456,LaboratorioManuel,15/6/2019,20.0,C,etiniliestradiol
-123456,ManuelRepetido,15/6/2019,1.99,C,tolueno
 475438,AsunApruebame,15/6/2019,12.77,S,acido sulfurico
+758342,Dexter's Laboratory,19/11/2020,800.99,C,ibuprofeno
 765432,LaboratorioAsun,15/6/2019,30.0,G,alcohol

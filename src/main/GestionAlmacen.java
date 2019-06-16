@@ -135,7 +135,8 @@ public class GestionAlmacen {
 								ga.listarProductosCaducidad(fichero, fecha);
 							break;
 							case 3:
-								rga.imprimirPrecioTotal(fichero);
+								//rga.imprimirPrecioTotal(fichero);
+								ga.imprimirPrecioTotal(fichero);
 						}
 						
 						opcion = validaciones.mostrarMenuImpresionYLeerYValidarOpcion();
